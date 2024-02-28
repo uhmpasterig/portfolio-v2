@@ -13,7 +13,7 @@ export const Navbar = () => {
 
 const NavbarItems = () => {
   return (
-    <div className="flex items-center space-x-8">
+    <div className="flex items-center md:space-x-8 space-x-4">
       {NAVBAR_ITEMS.map((item) => (
         <NavbarItem key={item.label} href={item.href}>
           {item.label}

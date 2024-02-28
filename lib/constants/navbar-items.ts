@@ -17,7 +17,7 @@ export const NAVBAR_ITEMS: NavbarItemInfo[] = [
     href: '/blog',
   },
   {
-    label: 'Contact',
-    href: '/contact',
+    label: 'Wiki',
+    href: '/wiki',
   },
 ];

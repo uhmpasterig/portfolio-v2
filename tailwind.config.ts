@@ -20,7 +20,7 @@ const config = {
     fontFamily: {
       sans: ["Poppins", "sans-serif"],
       poppins: ["Poppins", "sans-serif"],
-      mono: ["JetBrains Mono", "monospace"],
+      mono: ["Poppins", "sans-serif"],
     },
     fontWeight:{
       thin: "100",

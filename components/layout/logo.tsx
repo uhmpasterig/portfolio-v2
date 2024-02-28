@@ -6,7 +6,7 @@ import { Suspense } from 'react';
 
 export const Logo = () => {
   return (
-    <div className="flex items-center space-x-4 mr-6 h-8">
+    <div className="hidden md:flex items-center mr-6 h-8">
       <Suspense fallback={<Skeleton className="h-full w-8 rounded-full" />}>
         <Image
           src="/logo.png"

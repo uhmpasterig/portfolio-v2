@@ -10,7 +10,7 @@
 /* SHADCN/UI Theme */
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 90%;
     --foreground: 240 10% 3.9%;
 
     --card: 0 0% 100%;
@@ -42,7 +42,7 @@
   }
 
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 240, 3%, 6%;
     --foreground: 0 0% 98%;
 
     --card: 240 10% 3.9%;
