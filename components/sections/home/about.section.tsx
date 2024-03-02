@@ -1,8 +1,6 @@
-'use client';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
 
-export const About = () => {
+export const AboutSection = () => {
   return (
     <section
       className={cn(
