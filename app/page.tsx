@@ -3,9 +3,8 @@ import { cn } from '@/lib/utils';
 import PageContainer from '@/components/container/page-container';
 import { Grid, GridCross, GridItem } from '@/components/layout/grid';
 import { About, Greeting, Projects } from '@/components/sections/home';
-import { motion } from 'framer-motion';
 
-export default function Home() {
+export default async function Home() {
   return (
     <PageContainer>
       <Test />
