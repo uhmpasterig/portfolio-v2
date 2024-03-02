@@ -1,6 +1,6 @@
 import { type SchemaTypeDefinition } from 'sanity';
-import { projects } from './schemas';
+import { projects, navbarItems } from './schemas';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [projects],
+  types: [projects, navbarItems],
 };

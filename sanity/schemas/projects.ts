@@ -1,17 +1,7 @@
-// schemas/profile.ts
-
 import { defineField } from 'sanity';
 import { FolderOpenDotIcon } from 'lucide-react';
 
-type SanityImage = {
-  asset: {
-    _ref: string;
-    _type: string;
-  };
-  alt: string;
-};
-
-export type SanityProject = {
+export type Project = {
   title: string;
   description: string;
   image: string;
@@ -20,7 +10,7 @@ export type SanityProject = {
   tags: string[];
 };
 
-export type SanityProjects = SanityProject[];
+export type Projects = Project[];
 
 export const projects = {
   name: 'projects',
@@ -73,4 +63,3 @@ export const projects = {
     }),
   ],
 };
-
