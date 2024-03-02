@@ -1,4 +1,3 @@
-'use client';
 import { cn } from '@/lib/utils';
 import PageContainer from '@/components/container/page-container';
 import { Grid, GridCross, GridItem } from '@/components/layout/grid';
@@ -15,7 +14,7 @@ export default async function Home() {
 const Test = () => {
   return (
     <>
-      <div className="w-full text-foreground md:mt-28 mt-20 flex flex-col items-center ">
+      <div className="w-full text-foreground flex flex-col items-center ">
         <Greeting />
         <Projects />
         <About />

@@ -12,8 +12,10 @@ export const Header = () => {
       )}
     >
       <div className="container h-16 max-w-screen-2xl items-center flex justify-between">
-        <div className='flex'>
-          <Logo />
+        <div className="flex">
+          <div className="relative hidden md:flex items-center justify-center mr-6 h-8">
+            <Logo height={40} width={40} skeletonClassName="w-8" />
+          </div>
           <Navbar />
         </div>
         <HeaderItems />

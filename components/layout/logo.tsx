@@ -2,20 +2,27 @@
 import Image from 'next/image';
 import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib/utils';
-import { Suspense } from 'react';
+import { useState } from 'react';
 
-export const Logo = () => {
+type LogoProps = {
+  height?: number;
+  width?: number;
+  skeletonClassName?: string;
+} & Props.HasClassName;
+
+export const Logo = ({ className, skeletonClassName, height = 40, width = 40 }: LogoProps) => {
+  const [isLoaded, setIsLoaded] = useState(false);
   return (
-    <div className="hidden md:flex items-center mr-6 h-8">
-      <Suspense fallback={<Skeleton className="h-full w-8 rounded-full" />}>
-        <Image
-          src="/logo.png"
-          alt="Logo"
-          width={40}
-          height={40}
-          className={cn('h-full w-auto')}
-        />
-      </Suspense>
-    </div>
+    <>
+      <Image
+        src="/logo.png"
+        alt="Logo"
+        width={height}
+        height={width}
+        className={cn('h-full w-auto transition-all', { 'opacity-0': !isLoaded }, className)}
+        onLoad={() => setIsLoaded(true)}
+      />
+      {!isLoaded && <Skeleton className={cn('absolute h-full w-full rounded-full', skeletonClassName)} />}
+    </>
   );
 };
