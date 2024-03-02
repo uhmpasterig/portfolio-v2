@@ -1,9 +1,9 @@
 import { cn } from '@/lib/utils';
 import PageContainer from '@/components/container/page-container';
 import { Grid, GridCross, GridItem } from '@/components/layout/grid';
-import { Greeting, Projects } from '@/components/sections/home';
+import { About, Greeting, Projects } from '@/components/sections/home';
 
-export default function Home() {
+export default async function Home() {
   return (
     <PageContainer>
       <Test />
