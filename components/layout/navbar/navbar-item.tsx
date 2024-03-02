@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 
 type NavbarItemProps = LinkProps;
 
-export const NavbarItem = ({ children, ...props }: Component.HasChild & NavbarItemProps) => {
+export const NavbarItem = ({ children, ...props }: Props.HasChildren & NavbarItemProps) => {
   const pathname = usePathname();
   const isActive = isItemActive(pathname, props.href as string);
   return (

@@ -8,7 +8,6 @@ export const HeaderItems = () => {
       <HeaderButton className='' href="https://github.com/uhmpasterig" tooltip="My Personal Github" link={true}>
         <GitHubLogoIcon className="w-[1.2rem] h-[1.2rem]" />
       </HeaderButton>
-      <ThemeSwitcher />
     </div>
   );
 };

@@ -1,11 +1,11 @@
 import { cn } from '@/lib/utils';
 
-export const GridItem = ({ children, className }: Component.HasChildAndClass) => {
+export const GridItem = ({ children, className }: Props.HasChildrenAndClassName) => {
   return (
     <div
       className={cn(
         'relative overflow-hidden',
-        'bg-[#1D1D20]',
+        'bg-childBackground',
         'border-border/50 border-2',
         'rounded-md',
         className,

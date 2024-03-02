@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-export const Grid = ({ children, className }: Component.HasChildAndClass) => {
+export const Grid = ({ children, className }: Props.HasChildrenAndClassName) => {
   return (
     <ul
       className={cn(
