@@ -1,10 +1,10 @@
 'use client';
 import { getImageUrl } from '@/lib/utils';
 import { GridItem } from '@/components/layout/grid';
-import type { SanityProject } from '@/sanity/schemas';
+import type { Project } from '@/sanity/schemas';
 import { ProjectItemTitle, ProjectItemDescription, ProjectItemRecentCommit, ProjectItemFooter } from './';
 
-export type ProjectItemProps = {} & SanityProject;
+export type ProjectItemProps = {} & Project;
 
 export const ProjectItem = ({ title, description, image, link, githubUrl, tags }: ProjectItemProps) => {
   const imageUrl = getImageUrl(image);
