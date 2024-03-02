@@ -23,7 +23,7 @@ export const GreetingAbout = () => {
 
 type HightlightedTextProps = {
   icon: React.ForwardRefExoticComponent<IconProps & React.RefAttributes<SVGSVGElement>>;
-} & Component.HasChild;
+} & Props.HasChildren;
 
 const HightlightedText = ({ icon, children }: HightlightedTextProps) => {
   const [isHovered, setIsHovered] = useState(false);

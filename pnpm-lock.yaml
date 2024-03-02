@@ -76,6 +76,9 @@ devDependencies:
   typescript:
     specifier: ^5
     version: 5.3.3
+  useful-react-types:
+    specifier: ^1.0.2
+    version: 1.0.2
 
 packages:
 
@@ -2660,7 +2663,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
@@ -3142,6 +3144,13 @@ packages:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
       punycode: 2.3.1
+    dev: true
+
+  /useful-react-types@1.0.2:
+    resolution: {integrity: sha512-C6kyKVHCqfGZuWqgR3GMs2Dl62aqNxt7BuEZa1c6NiPvdHP9Fzozlea6p2w2NdYORUTB8Y+f38kZeUKNLp7yDg==}
+    dependencies:
+      react: 18.2.0
+      typescript: 5.3.3
     dev: true
 
   /util-deprecate@1.0.2:
