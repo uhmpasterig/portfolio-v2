@@ -1,3 +1,3 @@
-export * from './class-name';
-export * from './route';
+export * from './style.class-name';
+export * from './validation.route';
 export * from './cms.data-fetching';

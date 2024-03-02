@@ -4,7 +4,7 @@ import { GreetingTitle, GreetingAbout } from '@/components/elements/greeting';
 import { GridItem } from '@/components/layout/grid';
 import { Logo } from '@/components/layout/logo';
 
-export const Greeting = () => {
+export const GreetingSection = () => {
   return (
     <GridItem
       className={cn(
