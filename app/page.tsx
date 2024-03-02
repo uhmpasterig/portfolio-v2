@@ -1,9 +1,7 @@
-'use client';
 import { cn } from '@/lib/utils';
 import PageContainer from '@/components/container/page-container';
 import { Grid, GridCross, GridItem } from '@/components/layout/grid';
-import { About, Greeting, Projects } from '@/components/sections/home';
-import { motion } from 'framer-motion';
+import { Greeting, Projects } from '@/components/sections/home';
 
 export default function Home() {
   return (
@@ -16,7 +14,7 @@ export default function Home() {
 const Test = () => {
   return (
     <>
-      <div className="w-full text-foreground md:mt-28 mt-20 flex flex-col items-center ">
+      <div className="w-full text-foreground flex flex-col items-center ">
         <Greeting />
         <Projects />
         <About />

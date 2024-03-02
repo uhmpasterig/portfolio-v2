@@ -20,7 +20,7 @@ export const Logo = ({ className, skeletonClassName, height = 40, width = 40 }: 
         width={height}
         height={width}
         className={cn('h-full w-auto transition-all', { 'opacity-0': !isLoaded }, className)}
-        onLoadingComplete={() => setIsLoaded(true)}
+        onLoad={() => setIsLoaded(true)}
       />
       {!isLoaded && <Skeleton className={cn('absolute h-full w-full rounded-full', skeletonClassName)} />}
     </>

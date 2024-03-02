@@ -1,8 +1,7 @@
 import { cn } from '@/lib/utils';
 
 import { GreetingTitle, GreetingAbout } from '@/components/elements/greeting';
-import { GridCross, GridItem } from '@/components/layout/grid';
-import Image from 'next/image';
+import { GridItem } from '@/components/layout/grid';
 import { Logo } from '@/components/layout/logo';
 
 export const Greeting = () => {
@@ -11,8 +10,8 @@ export const Greeting = () => {
       className={cn(
         'col-span-full flex flex-col items-center justify-center',
         'bg-transparent border-none',
-        'lg:pt-16 lg:pb-20 lg:px-6',
-        'pt-8 pb-10 px-3',
+        'lg:my-80 my-56',
+        'px-3',
       )}
     >
       <div className="relative md:h-16 h-10 w-16 md:mb-5 mb-3">
