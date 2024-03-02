@@ -32,11 +32,15 @@ const config = {
       bold: "700",
     },
     extend: {
+      dropShadow: {
+        "white": "10px 0 10px #fe8b02",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
+        childBackground: "#1D1D20",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",

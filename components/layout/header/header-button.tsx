@@ -25,7 +25,7 @@ export const HeaderButton = ({
   children,
   className,
   ...props
-}: Component.HasChildAndClass & HeaderButtonProps) => {
+}: Props.HasChildrenAndClassName & HeaderButtonProps) => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 

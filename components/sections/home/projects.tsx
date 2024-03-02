@@ -11,7 +11,7 @@ export const Projects = () => {
   return (
     <Grid className="w-full mb-10">
       <GridItem className="col-span-full h-11 text-center mt-10 flex items-center justify-center">
-        <h1 className="font-mono text-lg text-foreground/50 tracking-tighter">Projects</h1>
+        <h2 className="font-mono text-lg text-foreground/50 tracking-tighter">Projects</h2>
       </GridItem>
 
       <Project />
@@ -35,7 +35,7 @@ const Project = () => {
         </div>
 
         <div className="flex flex-col justify-between items-start">
-          <h1 className="text-base font-semibold">L0cked</h1>
+          <h3 className="text-base font-semibold">L0cked</h3>
 
           <span className="flex items-center gap-1 text-xs text-foreground/30">
             <TagIcon className="h-3 w-3" size={24} />
@@ -54,17 +54,18 @@ const Project = () => {
         <Link href="test" className="hover:underline hover:text-foreground/50 transition-colors">
           Merge pull request #1 from uhmpasterig/dev Dev
         </Link>
-        <br />
-        <span className="">
+      </p>
+
+      <div className="flex flex-row items-center justify-between gap-2">
+        
+        <span className="text-foreground/30 text-xs font-medium">
           6h ago on{' '}
           <Link href="test" className="text-white hover:underline">
             <GitBranch className="inline-block h-4 w-4" size={24} />
             main
           </Link>
         </span>
-      </p>
 
-      <div className="flex flex-row items-center justify-end gap-2">
         <Link
           href="test"
           className="flex flex-row items-center gap-1 cursor-pointer text-xs hover:underline text-foreground/30 hover:text-foreground/50 transition-colors"
