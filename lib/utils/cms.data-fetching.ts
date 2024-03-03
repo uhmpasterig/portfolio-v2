@@ -1,4 +1,4 @@
-import { NavbarItems, Projects } from '@/sanity/schemas';
+import { NavbarItems, Projects, SkillGroups } from '@/sanity/schemas';
 import imageUrlBuilder from '@sanity/image-url';
 import { createClient } from 'next-sanity';
 
@@ -14,7 +14,6 @@ const imageBuilder = imageUrlBuilder(client);
 // Utils function to convert data
 export function getImageUrl(source: string) {
   let imageUrl = imageBuilder.image(source);
-  console.log('imageUrl', imageUrl.url());
   return imageUrl.url();
 }
 
@@ -25,6 +24,10 @@ export async function fetchProjects(): Promise<Projects> {
 
 export async function fetchNavbarItems(): Promise<NavbarItems> {
   return await client.fetch(`*[_type == "navbarItems"] | order(index asc)`);
+}
+
+export async function fetchSkillGroups(): Promise<SkillGroups> {
+  return await client.fetch(`*[_type == "skillGroup"] | order(count(skills) asc)`);
 }
 
 export default client;
