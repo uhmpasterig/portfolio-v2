@@ -32,7 +32,7 @@ export const HeaderButton = ({
   if (!mounted)
     return (
       <div className="w-10 h-10 flex items-center justify-center">
-        <Skeleton className="h-8 w-8" />
+        <Skeleton className="h-6 w-6 rounded-full" />
       </div>
     );
 

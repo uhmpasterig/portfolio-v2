@@ -21,3 +21,7 @@ export const NavbarItem = ({ children, ...props }: Props.HasChildren & NavbarIte
     </Link>
   );
 };
+
+NavbarItem.Placeholder = () => {
+  return <div className="w-14 h-5 bg-foreground/10 rounded-md" />;
+};
