@@ -11,7 +11,13 @@ export const ProjectItemTitle = ({ imageUrl, title, tags }: ProjectItemTitleProp
   return (
     <div className="flex items-center gap-3">
       <div className="w-10 h-10 bg-foreground/5 rounded-full border-border flex items-center justify-center">
-        <Image src={imageUrl} alt={title} width={40} height={40} className="rounded-full shadow-sm shadow-black/50" />
+        <Image
+          src={imageUrl}
+          alt={title}
+          width={60}
+          height={60}
+          className="rounded-full shadow-sm shadow-black/50 h-8 w-8 object-contain overflow-hidden"
+        />
       </div>
 
       <div className="flex flex-col justify-between items-start">

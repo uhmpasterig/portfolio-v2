@@ -9,7 +9,7 @@ type ProjectItemFooterProps = Pick<ProjectItemProps, 'link' | 'githubUrl'>;
 export const ProjectItemFooter = ({ link, githubUrl }: ProjectItemFooterProps) => {
   return (
     <div className="flex flex-row items-center justify-between gap-2">
-      <span className="text-foreground/30 text-xs font-medium">
+      <span className="text-foreground/30 text-xs font-medium whitespace-nowrap">
         6h ago on{' '}
         <Link href="test" className="text-foreground/70 hover:underline">
           <GitBranch className="inline-block h-3.5 w-3.5" size={24} />
