@@ -13,7 +13,7 @@ export const LayoutContainer = ({ children }: { children: React.ReactNode }) => 
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body className={poppins.className}>
-        <ThemeProvider attribute="class" storageKey="theme" defaultTheme="system">
+        <ThemeProvider attribute="class" storageKey="theme" defaultTheme="dark">
           {children}
         </ThemeProvider>
       </body>

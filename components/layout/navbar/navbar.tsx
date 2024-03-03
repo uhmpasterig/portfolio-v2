@@ -29,6 +29,14 @@ const NavbarItems = () => {
           {item.label}
         </NavbarItem>
       ))}
+
+      {items.length === 0 && (
+        <div className="flex items-center space-x-4">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <NavbarItem.Placeholder key={i} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
