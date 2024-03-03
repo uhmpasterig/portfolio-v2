@@ -1,4 +1,5 @@
 'use client';
+import { cn } from '@/lib/utils';
 import { ThemeProvider } from 'next-themes';
 import { Roboto, Poppins, JetBrains_Mono } from 'next/font/google';
 import Head from 'next/head';
@@ -12,7 +13,7 @@ export const LayoutContainer = ({ children }: { children: React.ReactNode }) => 
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body className={poppins.className}>
+      <body className={cn(poppins.className, "w-screen overflow-x-hidden")}>
         <ThemeProvider attribute="class" storageKey="theme" defaultTheme="dark">
           {children}
         </ThemeProvider>
