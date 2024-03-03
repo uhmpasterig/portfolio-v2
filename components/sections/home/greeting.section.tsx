@@ -6,15 +6,15 @@ import { Logo } from '@/components/layout/logo';
 
 export const GreetingSection = () => {
   return (
-    <GridItem
+    <section
       className={cn(
         'col-span-full flex flex-col items-center justify-center',
         'bg-transparent border-none',
-        'lg:my-80 my-56',
+        'lg:my-80 mt-56 mb-44',
         'px-3',
       )}
     >
-      <div className="relative md:h-16 h-10 w-16 md:mb-5 mb-3">
+      <div className="relative md:h-16 md:w-16 h-12 w-12 md:mb-5 mb-3">
         <Logo className={cn('absolute h-full w-auto inset-0 m-auto')} width={200} height={200} />
       </div>
 
@@ -22,6 +22,6 @@ export const GreetingSection = () => {
         <GreetingTitle />
         <GreetingAbout />
       </div>
-    </GridItem>
+    </section>
   );
 };
