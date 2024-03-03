@@ -10,11 +10,13 @@ export const ProjectItem = ({ title, description, image, link, githubUrl, tags }
   const imageUrl = getImageUrl(image);
 
   return (
-    <GridItem className="col-span-full md:col-span-6 lg:col-span-4 row-span-1 p-5 flex flex-col gap-2">
+    <GridItem className="col-span-full md:col-span-6 lg:col-span-4 row-span-1 p-5 flex flex-col gap-1 justify-between">
       <ProjectItemTitle imageUrl={imageUrl} title={title} tags={tags} />
       <ProjectItemDescription description={description} />
-      <ProjectItemRecentCommit />
-      <ProjectItemFooter link={link} githubUrl={githubUrl} />
+      <div className="flex flex-col gap-1 w-full">
+        <ProjectItemRecentCommit />
+        <ProjectItemFooter link={link} githubUrl={githubUrl} />
+      </div>
     </GridItem>
   );
 };
