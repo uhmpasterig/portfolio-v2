@@ -9,13 +9,15 @@ import { cn } from '@/lib/utils';
 type HeaderButton = {
   link?: false;
   tooltip: string;
-} & ButtonProps;
+} & ButtonProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 type HeaderLink = {
   link?: true;
   tooltip: string;
   href: string;
-} & LinkProps;
+} & LinkProps &
+  React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 type HeaderButtonProps = HeaderLink | HeaderButton;
 
