@@ -13,6 +13,6 @@ export const ProjectItemRecentCommit = () => {
 
 ProjectItemRecentCommit.Placeholder = () => {
   return (
-    <Skeleton className="w-full h-6" />
+    <Skeleton className="w-full h-4" />
   );
 }

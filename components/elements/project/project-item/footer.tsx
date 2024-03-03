@@ -26,7 +26,7 @@ ProjectItemFooter.Placeholder = () => {
   return (
     <div className="flex flex-row items-center justify-between gap-2">
       <span className="text-foreground/30 text-xs font-medium">
-        <Skeleton className="w-24 h-5" />
+        <Skeleton className="w-24 h-4" />
       </span>
 
       <ProjectItemLinks.Placeholder />
