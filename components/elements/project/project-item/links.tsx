@@ -36,8 +36,8 @@ export const ProjectItemLinks = ({ link, githubUrl }: ProjectItemLinksProps) => 
 ProjectItemLinks.Placeholder = () => {
   return (
     <div className="flex flex-row items-center gap-1">
-      <Skeleton className="w-32 h-5" />
-      <Skeleton className="w-24 h-5" />
+      <Skeleton className="w-32 h-4" />
+      <Skeleton className="w-24 h-4" />
     </div>
   );
 };
