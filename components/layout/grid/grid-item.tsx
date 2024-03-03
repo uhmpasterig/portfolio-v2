@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 
 export const GridItem = ({ children, className }: Props.HasChildrenAndClassName) => {
   return (
-    <div
+    <li
       className={cn(
         'relative overflow-hidden',
         'bg-childBackground',
@@ -13,6 +13,6 @@ export const GridItem = ({ children, className }: Props.HasChildrenAndClassName)
     >
       {/* <span className='absolute bg-cyan-600/30 blur-3xl h-20 w-20 top-0 -translate-y-1/2 left-0 translate-x-2/3'></span> */}
       {children}
-    </div>
+    </li>
   );
 };
