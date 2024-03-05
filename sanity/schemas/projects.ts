@@ -1,17 +1,6 @@
 import { defineField } from 'sanity';
 import { FolderOpenDotIcon } from 'lucide-react';
 
-export type Project = {
-  title: string;
-  description: string;
-  image: string;
-  link: string;
-  githubUrl: string;
-  tags: string[];
-};
-
-export type Projects = Project[];
-
 export const projects = {
   name: 'projects',
   title: 'Projects',

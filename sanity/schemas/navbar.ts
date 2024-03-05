@@ -1,13 +1,6 @@
 import { defineField } from 'sanity';
 import { PanelLeft } from 'lucide-react';
 
-export type NavbarItem = {
-  label: string;
-  href: string;
-};
-
-export type NavbarItems = NavbarItem[];
-
 export const navbarItems = {
   name: 'navbarItems',
   title: 'Navbar Items',

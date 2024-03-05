@@ -1,16 +1,16 @@
-import { cn } from '@/lib/utils';
+import { cn, fetchNavbarItems } from '@/lib/utils';
 
 import { GreetingTitle, GreetingAbout } from '@/components/elements/greeting';
 import { GridItem } from '@/components/layout/grid';
 import { Logo } from '@/components/layout/logo';
 
-export const GreetingSection = () => {
+export const GreetingSection = async () => {
   return (
     <section
       className={cn(
         'col-span-full flex flex-col items-center justify-center',
         'bg-transparent border-none',
-        'lg:my-80 mt-56 mb-44',
+        'lg:mb-[25vh] lg:mt-[30vh] mt-[20vh] mb-[15vh]',
         'px-3',
       )}
     >

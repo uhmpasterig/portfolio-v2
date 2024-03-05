@@ -1,6 +1,8 @@
-import { NavbarItems, Projects, SkillGroups } from '@/sanity/schemas';
+import { SkillGroups } from '@/sanity/schemas';
 import imageUrlBuilder from '@sanity/image-url';
 import { createClient } from 'next-sanity';
+
+import type { Projects, NavbarItems } from '@/types';
 
 // Set up the client and imageBuilder to fetch data from Sanity
 const client = createClient({
@@ -26,8 +28,11 @@ export async function fetchNavbarItems(): Promise<NavbarItems> {
   return await client.fetch(`*[_type == "navbarItems"] | order(index asc)`);
 }
 
-export async function fetchSkillGroups(): Promise<SkillGroups> {
-  return await client.fetch(`*[_type == "skillGroup"] | order(count(skills) asc)`);
+export async function fetchHeaderInfo(): Promise<{
+  navbarItems: NavbarItems;
+}> {
+  const navbarItems = await fetchNavbarItems();
+  return { navbarItems };
 }
 
 export default client;

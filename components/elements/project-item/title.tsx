@@ -16,7 +16,7 @@ export const ProjectItemTitle = ({ imageUrl, title, tags }: ProjectItemTitleProp
           alt={title}
           width={60}
           height={60}
-          className="rounded-full shadow-sm shadow-black/50 h-8 w-8 object-contain overflow-hidden"
+          className="rounded-full shadow-sm h-8 w-8 object-contain overflow-hidden"
         />
       </div>
 
