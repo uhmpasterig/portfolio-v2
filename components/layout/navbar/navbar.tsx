@@ -1,42 +1,25 @@
-'use client';
-import { useState, useEffect } from 'react';
 import { fetchNavbarItems } from '@/lib/utils';
 import { NavbarItem } from './navbar-item';
-import type { NavbarItems } from '@/sanity/schemas';
+import type { NavbarItems } from '@/types';
 
-export const Navbar = () => {
+export const Navbar = async () => {
+  const navbarItems = await fetchNavbarItems();
   return (
-    <nav className="flex justify-start">
-      <div className="flex items-center space-x-8">
-        <NavbarItems />
-      </div>
-    </nav>
-  );
-};
-
-const NavbarItems = () => {
-  const [items, setItems] = useState<NavbarItems>([]);
-  useEffect(() => {
-    fetchNavbarItems().then((items) => {
-      setItems(items);
-    });
-  }, []);
-
-  return (
-    <div className="flex items-center md:space-x-8 space-x-4">
-      {items.map((item) => (
+    <nav className="flex justify-start items-center md:space-x-8 space-x-4">
+      {navbarItems.map((item) => (
         <NavbarItem key={item.label} href={item.href}>
           {item.label}
         </NavbarItem>
       ))}
 
-      {items.length === 0 && (
+      {/*  NOT NEEDED ANYMORE DUE TO SSR
+      {navbarItems.length === 0 && (
         <div className="flex items-center space-x-4">
           {Array.from({ length: 4 }).map((_, i) => (
             <NavbarItem.Placeholder key={i} />
           ))}
         </div>
-      )}
-    </div>
+      )} */}
+    </nav>
   );
 };
