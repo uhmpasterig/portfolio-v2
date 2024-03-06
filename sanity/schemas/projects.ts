@@ -29,18 +29,24 @@ export const projects = {
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'link',
-      title: 'Link',
-      type: 'url',
-      description: 'The link to the project',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'githubUrl',
-      title: 'Github URL',
-      type: 'url',
-      description: 'The link to the projects github repository',
-      validation: (Rule) => Rule.required(),
+      name: 'links',
+      title: 'Links',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'demo',
+          title: 'Demo',
+          type: 'url',
+          description: 'The link to the project',
+        }),
+        defineField({
+          name: 'github',
+          title: 'Github URL',
+          type: 'url',
+          description: 'The link to the projects github repository',
+        }),
+      ],
+      description: 'The links of the project',
     }),
     defineField({
       name: 'tags',

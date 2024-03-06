@@ -1,7 +1,6 @@
 import { cn } from '@/lib/utils';
 import { Navbar } from '../navbar/navbar';
 import { Logo } from '../logo';
-
 import { HeaderItems } from './header-items';
 
 export const Header = () => {

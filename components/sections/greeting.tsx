@@ -1,12 +1,24 @@
-import { cn, fetchNavbarItems } from '@/lib/utils';
-
+'use client';
+import { cn } from '@/lib/utils';
 import { GreetingTitle, GreetingAbout } from '@/components/elements/greeting';
-import { GridItem } from '@/components/layout/grid';
 import { Logo } from '@/components/layout/logo';
 
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+
 export const GreetingSection = async () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['end end', 'end start'],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0.8, 1], [1, 0]);
+
   return (
-    <section
+    <motion.section
+      ref={sectionRef}
+      style={{ opacity }}
       className={cn(
         'col-span-full flex flex-col items-center justify-center',
         'bg-transparent border-none',
@@ -22,6 +34,6 @@ export const GreetingSection = async () => {
         <GreetingTitle />
         <GreetingAbout />
       </div>
-    </section>
+    </motion.section>
   );
 };

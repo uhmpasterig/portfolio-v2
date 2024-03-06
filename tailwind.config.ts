@@ -40,7 +40,10 @@ const config = {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
-        childBackground: "#1D1D20",
+        childBackground: {
+          DEFAULT: "#1D1D20",
+          100: "#2D2D30",
+        },
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",

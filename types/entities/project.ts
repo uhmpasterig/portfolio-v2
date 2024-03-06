@@ -2,8 +2,10 @@ export type Project = {
   title: string;
   description: string;
   image: string;
-  link: string;
-  githubUrl: string;
+  links: {
+    github: string;
+    demo: string;
+  },
   tags: string[];
 };
 
