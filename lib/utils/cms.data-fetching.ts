@@ -1,8 +1,8 @@
-import { SkillGroups } from '@/sanity/schemas';
 import imageUrlBuilder from '@sanity/image-url';
 import { createClient } from 'next-sanity';
 
 import type { Projects, NavbarItems } from '@/types';
+import { Skills } from '@/types/entities/skill';
 
 // Set up the client and imageBuilder to fetch data from Sanity
 const client = createClient({
@@ -22,6 +22,10 @@ export function getImageUrl(source: string) {
 // Functions to fetch data from Sanity
 export async function fetchProjects(): Promise<Projects> {
   return await client.fetch(`*[_type == "projects"]`);
+}
+
+export async function fetchSkills(): Promise<Skills> {
+  return await client.fetch(`*[_type == "skills"]`);
 }
 
 export async function fetchNavbarItems(): Promise<NavbarItems> {
