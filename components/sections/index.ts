@@ -1,3 +1,3 @@
-export * from './greeting';
-export * from './list-section';
-export * from './about';
+export * from './Greeting';
+export * from './List';
+export * from './About';

@@ -1,7 +1,6 @@
-import { Grid } from '@/components/layout/grid';
+import { Grid } from '@/components/Grid';
 import { fetchProjects, getImageUrl } from '@/lib/utils';
-import { ListItem } from '@/components/elements/list-item';
-import { ListItemProps } from '@/types';
+import { ListItem, ListItemProps } from '@/components/ListItem';
 
 type ListSectionProps = {
   title: string;

@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { Skeleton } from '@/components/ui/skeleton';
+import { Skeleton } from '@/components/ui';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
 

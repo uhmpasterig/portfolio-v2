@@ -1,5 +1,3 @@
-export * from './header/header';
-export * from './navbar/navbar';
-export * from './navbar/navbar-item';
-
-export * from './footer/footer';
+export * from './header/Header';
+export * from './navbar/Navbar';
+export * from './footer/Footer';

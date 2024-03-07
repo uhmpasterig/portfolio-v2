@@ -1,7 +1,7 @@
 'use client';
 import { cn } from '@/lib/utils';
-import { GreetingTitle, GreetingAbout } from '@/components/elements/greeting';
-import { Logo } from '@/components/layout/logo';
+import { GreetingTitle, GreetingAbout } from '@/components/Greeting';
+import { Logo } from '@/components/Logo';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';

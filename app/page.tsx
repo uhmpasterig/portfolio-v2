@@ -1,6 +1,6 @@
-import PageContainer from '@/components/container/page-container';
+import PageContainer from '@/components/containers/PageContainer';
 import { GreetingSection, ListSection } from '@/components/sections';
-import { Separator } from '@/components/ui/separator';
+import { Separator } from '@/components/ui';
 import { fetchLists, getImageUrl } from '@/lib/utils';
 
 export default async function Home() {

@@ -1,7 +1,13 @@
 'use client';
-import { Skeleton } from '@/components/ui/skeleton';
-import { Button, ButtonProps } from '../../ui/button';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import {
+  Skeleton,
+  Button,
+  ButtonProps,
+  Tooltip,
+  TooltipProvider,
+  TooltipTrigger,
+  TooltipContent,
+} from '@/components/ui';
 import Link, { LinkProps } from 'next/link';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';

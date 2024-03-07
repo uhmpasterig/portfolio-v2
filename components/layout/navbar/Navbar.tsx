@@ -1,5 +1,5 @@
 import { fetchNavbarItems } from '@/lib/utils';
-import { NavbarItem } from './navbar-item';
+import { NavbarItem } from './NavbarItem';
 import type { NavbarItems } from '@/types';
 
 export const Navbar = async () => {
@@ -11,15 +11,6 @@ export const Navbar = async () => {
           {item.label}
         </NavbarItem>
       ))}
-
-      {/*  NOT NEEDED ANYMORE DUE TO SSR
-      {navbarItems.length === 0 && (
-        <div className="flex items-center space-x-4">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <NavbarItem.Placeholder key={i} />
-          ))}
-        </div>
-      )} */}
     </nav>
   );
 };

@@ -1,4 +1,4 @@
-import { Grid, GridItem } from '@/components/layout/grid';
+import { Grid, GridItem } from '@/components/Grid';
 import { cn } from '@/lib/utils';
 
 export const AboutSection = () => {

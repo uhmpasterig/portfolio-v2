@@ -1,4 +1,3 @@
-import { Language } from './../../types/entities/list-items';
 import imageUrlBuilder from '@sanity/image-url';
 import { createClient } from 'next-sanity';
 

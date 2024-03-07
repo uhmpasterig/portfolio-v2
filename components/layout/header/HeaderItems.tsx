@@ -1,6 +1,5 @@
 import { GitHubLogoIcon } from '@radix-ui/react-icons';
-import { ThemeSwitcher } from '../../utils/theme-switcher';
-import { HeaderButton } from './header-button';
+import { HeaderButton } from './HeaderButton';
 
 export const HeaderItems = () => {
   return (
