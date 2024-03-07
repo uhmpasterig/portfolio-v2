@@ -1,4 +1,3 @@
 export * from './greeting';
-export * from './projects';
-export * from './skills';
+export * from './list-section';
 export * from './about';

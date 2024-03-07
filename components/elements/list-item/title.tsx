@@ -4,6 +4,7 @@ import { GitHubLogoIcon } from '@radix-ui/react-icons';
 import { Animate } from '@/components/animate';
 import { Separator } from '@/components/ui/separator';
 import type { ListItemTitleProps } from '@/types';
+import Link from 'next/link';
 
 export const ProjectItemTitle = ({ data }: ListItemTitleProps) => {
   return (
@@ -19,7 +20,6 @@ export const ProjectItemTitle = ({ data }: ListItemTitleProps) => {
       </div>
 
       <div className="flex w-full items-center gap-2">
-        <Separator className="flex-none w-2" />
         <h3 className="flex-none text-base font-semibold whitespace-nowrap">{data.title}</h3>
         <Separator className="flex-grow w-auto" />
         <Links data={data} />
@@ -33,9 +33,17 @@ const Links = ({ data: { links } }: ListItemTitleProps) => {
     <>
       {links && (
         <div className="flex-none flex items-center gap-2">
-          {links.github && <GitHubLogoIcon className="w-4 h-4" />}
+          {links.github && (
+            <Link href={links.github}>
+              <GitHubLogoIcon className="w-4 h-4" />
+            </Link>
+          )}
           {links.github && links.demo && <Separator className="w-2" />}
-          {links.demo && <LinkIcon className="w-4 h-4" />}
+          {links.demo && (
+            <Link href={links.demo}>
+              <LinkIcon className="w-4 h-4" />
+            </Link>
+          )}
         </div>
       )}
     </>

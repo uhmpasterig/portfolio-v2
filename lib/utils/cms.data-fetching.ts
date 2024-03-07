@@ -1,8 +1,8 @@
+import { Language } from './../../types/entities/list-items';
 import imageUrlBuilder from '@sanity/image-url';
 import { createClient } from 'next-sanity';
 
-import type { Projects, NavbarItems } from '@/types';
-import { Skills } from '@/types/entities/skill';
+import type { Projects, NavbarItems, Skills, Languages } from '@/types';
 
 // Set up the client and imageBuilder to fetch data from Sanity
 const client = createClient({
@@ -26,6 +26,25 @@ export async function fetchProjects(): Promise<Projects> {
 
 export async function fetchSkills(): Promise<Skills> {
   return await client.fetch(`*[_type == "skills"]`);
+}
+
+export async function fetchLanguages(): Promise<Languages> {
+  return await client.fetch(`*[_type == "programmingLanguages"]`);
+}
+
+export async function fetchBlogPost(slug: string) {
+  return await client.fetch(`*[_type == "blogPosts"][0]`, { slug });
+}
+
+export async function fetchLists(): Promise<{
+  projects: Projects;
+  skills: Skills;
+  languages: Languages;
+}> {
+  const projects = await fetchProjects();
+  const skills = await fetchSkills();
+  const languages = await fetchLanguages();
+  return { projects, skills, languages };
 }
 
 export async function fetchNavbarItems(): Promise<NavbarItems> {

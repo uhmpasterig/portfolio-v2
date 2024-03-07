@@ -13,7 +13,7 @@ export const LayoutContainer = ({ children }: { children: React.ReactNode }) => 
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body className={cn(poppins.className, "w-screen overflow-x-hidden")}>
+      <body className={cn(poppins.className, "w-screen overflow-x-hidden min-h-screen")}>
         <ThemeProvider attribute="class" storageKey="theme" defaultTheme="dark">
           {children}
         </ThemeProvider>
