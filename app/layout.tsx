@@ -1,4 +1,4 @@
-import LayoutContainer from '@/components/container/layout-container';
+import LayoutContainer from '@/components/containers/LayoutContainer';
 import type { Metadata } from 'next';
 import './globals.css';
 
