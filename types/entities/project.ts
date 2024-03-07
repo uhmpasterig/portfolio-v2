@@ -5,7 +5,7 @@ export type Project = {
   links: {
     github: string;
     demo: string;
-  },
+  };
   tags: string[];
 };
 

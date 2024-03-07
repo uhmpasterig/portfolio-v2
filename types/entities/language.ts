@@ -1,8 +1,7 @@
-export type Skill = {
+export type Language = {
   title: string;
   description: string;
   image: string;
   tags: string[];
 };
-
-export type Skills = Skill[];
+export type Languages = Language[];
