@@ -4,4 +4,4 @@ export * from './projects';
 export * from './skills';
 export * from './languages';
 
-export * from './blog-posts';
+export * from './blog-post';
