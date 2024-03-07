@@ -1,4 +1,4 @@
-import PageContainer from '@/components/container/page-container';
+import PageContainer from '@/components/containers/PageContainer';
 import { fetchBlogPost } from '@/lib/utils';
 import 'easymde/dist/easymde.min.css';
 
