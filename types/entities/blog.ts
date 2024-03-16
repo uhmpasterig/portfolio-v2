@@ -1,5 +1,15 @@
-export type Blog = {};
-export * from './navbar-item';
-export * from './language';
-export * from './project';
-export * from './skill';
+type Slug = {
+  current: string;
+}
+
+export type Blog = {
+  title: string;
+  description: string;
+  slug: Slug;
+  filename: Slug;
+  tags: string[];
+  date: string;
+  image: string;
+  
+  content: string;
+};
