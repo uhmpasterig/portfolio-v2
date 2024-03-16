@@ -24,12 +24,14 @@ export const ListItem = (props: ListItemProps) => {
   return (
     <GridItem
       className={cn(
-        'col-span-full md:col-span-6 lg:col-span-4 row-span-1 p-4 flex flex-col gap-1 justify-evenly',
+        'col-span-full md:col-span-6 lg:col-span-4 row-span-1 p-4 flex flex-col gap-1 justify-between',
         'group',
       )}
     >
-      <ListItemTitle data={props} />
-      <ListItemDescription data={props} />
+      <div className="flex gap-1 flex-col">
+        <ListItemTitle data={props} />
+        <ListItemDescription data={props} />
+      </div>
       <ListItemTags data={props} />
     </GridItem>
   );
