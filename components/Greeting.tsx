@@ -45,17 +45,20 @@ const HightlightedText = ({ icon, children }: HightlightedTextProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const Icon = icon;
   return (
-    <motion.span
-      className={cn(
-        'relative group cursor-pointer transition-colors whitespace-nowrap cyan-text',
-        'bg-gradient-to-b from-cyan-500 to-cyan-700 bg-clip-text text-transparent hover:underline hover:text-cyan-600',
-      )}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      whileHover={{ y: -10 }}
-    >
+    <span className='relative'>
+      <motion.span
+        className={cn(
+          'relative group cursor-pointer transition-colors whitespace-nowrap cyan-text',
+          'bg-gradient-to-b from-cyan-500 to-cyan-700 bg-clip-text text-transparent hover:underline hover:text-cyan-600',
+        )}
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+        whileHover={{ y: -10 }}
+      >
+        {children}
+      </motion.span>
       <motion.div
-        className={cn('absolute left-0 w-full h-full text-border flex justify-center text-cyan-500')}
+        className={cn('absolute left-0 w-full h-full text-border flex justify-center text-cyan-500 -z-10')}
         animate={{ top: isHovered ? -15 : 20, opacity: isHovered ? 1 : 0 }}
         initial={{
           opacity: isHovered ? 1 : 0,
@@ -63,7 +66,6 @@ const HightlightedText = ({ icon, children }: HightlightedTextProps) => {
       >
         <Icon />
       </motion.div>
-      {children}
-    </motion.span>
+    </span>
   );
 };
