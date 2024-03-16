@@ -35,10 +35,15 @@ export const blogPosts = {
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'content',
-      title: 'Content',
-      type: 'markdown',
-      description: 'The content of the Blog Post',
+      name: 'filename',
+      title: 'Filename',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200) + '.md',
+    },
+      description: 'The name of the Markdown File located in the /public/blog directory (should be the same as the slug)',
     }),
     defineField({
       name: 'tags',

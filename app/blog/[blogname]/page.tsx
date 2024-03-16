@@ -1,6 +1,6 @@
 import PageContainer from '@/components/containers/PageContainer';
-import { fetchBlogPost } from '@/lib/utils';
-import 'easymde/dist/easymde.min.css';
+import { fetchBlogPost } from '@/lib/utils/fetching/cms-fetching';
+import {transformer} from '@/lib/utils/markdown/transformer';
 
 export default async function Blog({
   params: { blogname },
@@ -9,12 +9,12 @@ export default async function Blog({
     blogname: string;
   };
 }) {
-  console.log(blogname);
   const blogPost = await fetchBlogPost(blogname);
-  console.log(blogPost)
+  const html = transformer(blogPost.content);
+
   return (
     <PageContainer>
-      {blogPost?.content}
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </PageContainer>
   );
 }

@@ -1,31 +1,31 @@
 import { defineField } from 'sanity';
-import { TestTube2 } from 'lucide-react';
+import { Cpu } from 'lucide-react';
 
-export const skills = {
-  name: 'skills',
-  title: 'Skills',
+export const technologies = {
+  name: 'technologies',
+  title: 'Technologies',
   type: 'document',
-  icon: TestTube2,
+  icon: Cpu,
   fields: [
     defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
-      description: 'The name of the Skill',
+      description: 'The name of the Technology',
       validation: (Rule) => Rule.required().min(3).max(60),
     }),
     defineField({
       name: 'description',
       title: 'Description',
       type: 'text',
-      description: 'A brief description of the Skill',
+      description: 'A brief description of the Technology',
       validation: (Rule) => Rule.required().min(3).max(250),
     }),
     defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
-      description: 'The image of the Skill',
+      description: 'The image of the Technology',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -33,7 +33,7 @@ export const skills = {
       title: 'Tags',
       type: 'array',
       of: [{ type: 'string' }],
-      description: 'The tags of the Skill',
+      description: 'The tags of the Technology',
       validation: (Rule) => Rule.required(),
     }),
   ],

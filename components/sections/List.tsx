@@ -10,7 +10,7 @@ type ListSectionProps = {
 export const ListSection = async ({ title, items }: ListSectionProps) => {
   return (
     <section className="w-full">
-      <h2 className="text-3xl font-bold mb-4">{title}</h2>
+      <h2 className="text-3xl font-bold mb-4 md:text-left text-center ">{title}</h2>
       <Grid>
         {items.map((item, i) => (
           <ListItem
@@ -21,6 +21,7 @@ export const ListSection = async ({ title, items }: ListSectionProps) => {
             description={item.description}
             tags={item.tags}
           />
+          
         ))}
       </Grid>
     </section>

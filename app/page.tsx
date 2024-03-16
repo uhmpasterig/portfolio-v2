@@ -4,7 +4,7 @@ import { Separator } from '@/components/ui';
 import { fetchLists, getImageUrl } from '@/lib/utils';
 
 export default async function Home() {
-  const { skills, projects, languages } = await fetchLists();
+  const { skills, projects, languages, technologies } = await fetchLists();
 
   skills.map((skill) => {
     skill.image = getImageUrl(skill.image);
@@ -18,6 +18,10 @@ export default async function Home() {
     language.image = getImageUrl(language.image);
   });
 
+  technologies.map((technology) => {
+    technology.image = getImageUrl(technology.image);
+  });
+
   return (
     <PageContainer>
       <GreetingSection />
@@ -25,7 +29,10 @@ export default async function Home() {
       <Separator className="my-10" />
       <ListSection title="Programming Languages" items={languages} />
       <Separator className="my-10" />
+      <ListSection title="Technologies" items={technologies} />
+      <Separator className="my-10" />
       <ListSection title="Skills" items={skills} />
+      <Separator className="my-10" />
     </PageContainer>
   );
 }
