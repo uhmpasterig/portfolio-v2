@@ -32,7 +32,7 @@ export default async function Home() {
       <ListSection title="Technologies" items={technologies} />
       <Separator className="my-10" />
       <ListSection title="Skills" items={skills} />
-      <Separator className="my-10" />
+      <Separator className="my-10 mb-24" />
     </PageContainer>
   );
 }
