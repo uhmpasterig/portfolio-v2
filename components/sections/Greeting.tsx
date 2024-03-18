@@ -13,7 +13,7 @@ export const GreetingSection = async () => {
     offset: ['end end', 'end start'],
   });
 
-  const opacity = useTransform(scrollYProgress, [0.8, 1], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0.7, 0.9], [1, 0]);
 
   return (
     <motion.section
