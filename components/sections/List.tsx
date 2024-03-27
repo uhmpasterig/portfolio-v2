@@ -1,6 +1,5 @@
 'use client';
 import { Grid } from '@/components/Grid';
-import { fetchProjects, getImageUrl } from '@/lib/utils';
 import { ListItem, ListItemProps } from '@/components/ListItem';
 import { useEffect, useRef, useState } from 'react';
 import { useScroll, useTransform, motion, MotionValue } from 'framer-motion';
