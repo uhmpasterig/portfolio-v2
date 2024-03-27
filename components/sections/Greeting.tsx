@@ -5,6 +5,7 @@ import { Logo } from '@/components/Logo';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { Button } from '../ui';
 
 export const GreetingSection = async () => {
   const sectionRef = useRef(null);
@@ -24,15 +25,21 @@ export const GreetingSection = async () => {
         'bg-transparent border-none',
         'lg:mb-[25vh] lg:mt-[30vh] mt-[20vh] mb-[15vh]',
         'px-3',
+        'md:gap-8 gap-4',
       )}
     >
-      <div className="relative md:h-16 md:w-16 h-12 w-12 md:mb-5 mb-3">
+      <div className="relative md:h-16 md:w-16 h-12 w-12">
         <Logo className={cn('absolute h-full w-auto inset-0 m-auto')} width={200} height={200} />
       </div>
 
-      <div className={cn('mx-auto flex max-w-5xl flex-col items-center gap-2')}>
+      <div className={cn('mx-auto flex max-w-5xl flex-col items-center')}>
         <GreetingTitle />
         <GreetingAbout />
+      </div>
+
+      <div className={cn('flex max-w-5xl flex-row gap-4 items-center')}>
+        <Button className='w-24'>Projects</Button>
+        <Button className='w-24' variant={'secondary'}>Blog</Button>
       </div>
     </motion.section>
   );
