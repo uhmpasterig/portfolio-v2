@@ -25,8 +25,7 @@ export default async function Home() {
   return (
     <PageContainer>
       <GreetingSection />
-      <Separator className="my-10" />
-      <h1>About ME HIER!</h1>
+      <ListSection title="Projects" items={projects} />
       <Separator className="my-10" />
       <ListSection title="Programming Languages" items={languages} />
       <Separator className="my-10" />

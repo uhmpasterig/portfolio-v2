@@ -45,7 +45,7 @@ const HightlightedText = ({ icon, children }: HightlightedTextProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const Icon = icon;
   return (
-    <span className="relative">
+    <span className='relative'>
       <motion.span
         className={cn(
           'relative group cursor-pointer transition-colors whitespace-nowrap cyan-text',

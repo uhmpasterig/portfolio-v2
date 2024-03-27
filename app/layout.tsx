@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-
   title: 'Uhmpasterig',
   description: 'Portfolio of a web developer',
   openGraph: {
@@ -20,7 +19,6 @@ export const metadata: Metadata = {
         alt: 'Uhmpasterig',
       },
     ],
-    
     locale: 'en_US',
   }
 };
