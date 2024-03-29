@@ -29,6 +29,7 @@ export default async function Home() {
       <h1>About ME HIER!</h1>
       <Separator className="my-10" />
       <ListSection title="Programming Languages" items={languages} />
+      
       <Separator className="my-10" />
       <ListSection title="Technologies" items={technologies} />
       <Separator className="my-10" />

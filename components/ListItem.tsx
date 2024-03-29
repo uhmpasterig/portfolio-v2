@@ -1,3 +1,4 @@
+'use client';
 import { GridItem } from '@/components/Grid';
 import { cn } from '@/lib/utils';
 
@@ -8,46 +9,40 @@ import { Animate } from '@/components/Animate';
 import { Separator } from '@/components/ui';
 import Link from 'next/link';
 import React from 'react';
+import { useListContext, ListItemContext, useListItemContext } from '@/lib/hooks/list-hooks';
+import { Project } from '@/types';
 
-export type ListItemProps = {
-  image: string;
-  title: string;
-  links?: {
-    github?: string;
-    demo?: string;
-  };
-  description: string;
-  tags: string[];
+export type ListItemProps<T> = {
+  item: T;
 };
 
-export const ListItem = (props: ListItemProps) => {
+export const ListItem = <T,>({ item }: ListItemProps<T>) => {
   return (
-    <GridItem
-      className={cn(
-        'col-span-full md:col-span-6 lg:col-span-4 row-span-1 p-4 flex flex-col gap-1 justify-between',
-        'group',
-      )}
-    >
-      <div className="flex gap-1 flex-col">
-        <ListItemTitle data={props} />
-        <ListItemDescription data={props} />
-      </div>
-      <ListItemTags data={props} />
-    </GridItem>
+    <ListItemContext.Provider value={item}>
+      <GridItem
+        className={cn(
+          'col-span-full md:col-span-6 lg:col-span-4 row-span-1 p-4 flex flex-col gap-1 justify-between',
+          'group',
+        )}
+      >
+        <div className="flex gap-1 flex-col">
+          <ListItemTitle />
+          <ListItemDescription />
+        </div>
+        <ListItemTags />
+      </GridItem>
+    </ListItemContext.Provider>
   );
 };
 
-type ListItemTitleProps = {
-  data: Pick<ListItemProps, 'title' | 'image' | 'links'>;
-};
-
-const ListItemTitle = ({ data }: ListItemTitleProps) => {
+const ListItemTitle = () => {
+  const { image, title } = useListItemContext();
   return (
     <Animate variant="left" className="flex items-center gap-3">
       <div className="w-10 h-10 bg-foreground/5 rounded-full border-border flex items-center justify-center flex-shrink-0">
         <Image
-          src={data.image}
-          alt={data.title}
+          src={image}
+          alt={title}
           width={60}
           height={60}
           className="rounded-full shadow-sm h-8 w-8 object-contain overflow-hidden"
@@ -55,27 +50,28 @@ const ListItemTitle = ({ data }: ListItemTitleProps) => {
       </div>
 
       <div className="flex w-full items-center gap-2">
-        <h3 className="flex-none text-base font-semibold whitespace-nowrap">{data.title}</h3>
+        <h3 className="flex-none text-base font-semibold whitespace-nowrap">{title}</h3>
         <Separator className="flex-grow w-auto" />
-        <Links data={data} />
       </div>
     </Animate>
   );
 };
 
-const Links = ({ data: { links } }: ListItemTitleProps) => {
+const Links = () => {
+  const item = useListItemContext<Project>();
+
   return (
     <>
-      {links && (
+      {item.links && (
         <div className="flex-none flex items-center gap-2">
-          {links.github && (
-            <Link href={links.github}>
+          {item.links.github && (
+            <Link href={item.links.github}>
               <GitHubLogoIcon className="w-4 h-4" />
             </Link>
           )}
-          {links.github && links.demo && <Separator className="w-2" />}
-          {links.demo && (
-            <Link href={links.demo}>
+          {item.links.github && item.links.demo && <Separator className="w-2" />}
+          {item.links.demo && (
+            <Link href={item.links.demo}>
               <LinkIcon className="w-4 h-4" />
             </Link>
           )}
@@ -85,11 +81,9 @@ const Links = ({ data: { links } }: ListItemTitleProps) => {
   );
 };
 
-type ListItemDescriptionProps = {
-  data: Pick<ListItemProps, 'description' | 'image'>;
-};
+const ListItemDescription = () => {
+  const { description } = useListItemContext();
 
-const ListItemDescription = ({ data: { description } }: ListItemDescriptionProps) => {
   return (
     <Animate variant="top" delay={0.25}>
       <p className="text-foreground/50 text-sm font-medium">
@@ -99,11 +93,8 @@ const ListItemDescription = ({ data: { description } }: ListItemDescriptionProps
   );
 };
 
-type ListItemTagsProps = {
-  data: Pick<ListItemProps, 'tags'>;
-};
-
-const ListItemTags = ({ data: { tags } }: ListItemTagsProps) => {
+const ListItemTags = () => {
+  const { tags } = useListItemContext();
   return (
     <Animate variant="left" delay={0.4} className="flex flex-row gap-1 items-start mt-1">
       {tags.map((tag, i) => (

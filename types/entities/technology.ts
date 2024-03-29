@@ -1,8 +1,5 @@
-export type Technology = {
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-};
+import { ListItem } from '../components/list';
 
-export type Technologys = Technology[];
+export type Technology = {};
+export type TechnologyListItem = ListItem<Technology>;
+export type Technologys = TechnologyListItem[];

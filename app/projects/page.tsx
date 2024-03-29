@@ -2,9 +2,11 @@ import PageContainer from '@/components/containers/PageContainer';
 import { GreetingSection, ListSection } from '@/components/sections';
 import { Separator } from '@/components/ui';
 import { fetchLists, getImageUrl } from '@/lib/utils';
+import { Project } from '@/types';
+import { ListItem } from '@/types/components/list';
 
 export default async function Home() {
-  const { projects,  } = await fetchLists();
+  const { projects } = await fetchLists();
 
   projects.map((project) => {
     project.image = getImageUrl(project.image);
@@ -12,7 +14,7 @@ export default async function Home() {
 
   return (
     <PageContainer>
-      <ListSection title="Projects" items={projects} />
+      <ListSection<Project> title="Projects" items={projects} />
     </PageContainer>
   );
 }

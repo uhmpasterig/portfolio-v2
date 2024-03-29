@@ -1,7 +1,5 @@
-export type Language = {
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-};
-export type Languages = Language[];
+import { ListItem } from '../components/list';
+
+export type Language = {};
+export type LanguageListItem = ListItem<Language>;
+export type Languages = LanguageListItem[];

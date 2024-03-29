@@ -1,36 +1,39 @@
 'use client';
 import { Grid } from '@/components/Grid';
 import { ListItem, ListItemProps } from '@/components/ListItem';
-import { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { useScroll, useTransform, motion, MotionValue } from 'framer-motion';
+import type { ListItem as ListItemInfo, ListSectionProps } from '@/types/components/list';
+import { ListContext, useListContext } from '@/lib/hooks/list-hooks';
+import { useMediaQuery } from '@/lib/hooks/media-query';
 
-type ListSectionProps = {
-  title: string;
-  items: ListItemProps[];
+export const ListSection = <T,>({ title, items, variant = 'small-icons' }: ListSectionProps<T>) => {
+  return (
+    <ListContext.Provider value={{ title, items, variant }}>
+      <ListSectionWrapper>
+        <ListSectionContent />
+      </ListSectionWrapper>
+    </ListContext.Provider>
+  );
 };
 
-export const ListSection = ({ title, items }: ListSectionProps) => {
+const ListSectionContent = () => {
+  const { title, items } = useListContext();
+
   return (
-    <ListSectionWrapper>
+    <>
       <h2 className="text-3xl font-bold mb-4 md:text-left text-center ">{title}</h2>
       <Grid>
         {items.map((item, i) => (
-          <ListItem
-            key={i}
-            image={item.image}
-            title={item.title}
-            links={item.links}
-            description={item.description}
-            tags={item.tags}
-          />
+          <ListItem key={i} item={item} />
         ))}
       </Grid>
-    </ListSectionWrapper>
+    </>
   );
 };
 
 const ListSectionWrapper = ({ children }: Props.HasChildren) => {
-  const sectionRef = useRef(null);
+  const sectionRef = React.useRef(null);
   const isMd = useMediaQuery('md');
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -50,26 +53,4 @@ const ListSectionWrapper = ({ children }: Props.HasChildren) => {
       {children}
     </motion.section>
   );
-};
-
-export const sizes = {
-  sm: '640px',
-  md: '768px',
-};
-
-const useMediaQuery = (screen: keyof typeof sizes) => {
-  const [matches, setMatches] = useState(false);
-
-  useEffect(() => {
-    const query = `(min-width: ${sizes[screen]})`;
-    const media = window.matchMedia(query);
-    if (media.matches !== matches) {
-      setMatches(media.matches);
-    }
-    const listener = () => setMatches(media.matches);
-    window.addEventListener('resize', listener);
-    return () => window.removeEventListener('resize', listener);
-  }, [matches, screen]);
-
-  return matches;
 };
