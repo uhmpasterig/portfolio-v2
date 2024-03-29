@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-
+  metadataBase: new URL('https://lucaa.sh/'),
   title: 'Uhmpasterig',
   description: 'Portfolio of a web developer',
   openGraph: {
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
         alt: 'Uhmpasterig',
       },
     ],
-    
+
     locale: 'en_US',
-  }
+  },
 };
 
 export default function RootLayout({

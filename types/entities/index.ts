@@ -4,3 +4,4 @@ export * from './project';
 export * from './skill';
 export * from './technology';
 export * from './blog';
+export * from './list-item';

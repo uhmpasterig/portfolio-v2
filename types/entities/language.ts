@@ -1,4 +1,4 @@
-import { ListItem } from '../components/list';
+import { ListItem } from './list-item';
 
 export type Language = {};
 export type LanguageListItem = ListItem<Language>;

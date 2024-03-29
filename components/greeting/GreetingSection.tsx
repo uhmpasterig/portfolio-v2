@@ -1,13 +1,13 @@
 'use client';
 import { cn } from '@/lib/utils';
-import { GreetingTitle, GreetingAbout } from '@/components/Greeting';
+import { GreetingTitle, GreetingAbout } from '@/components/greeting/Greeting';
 import { Logo } from '@/components/Logo';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Button } from '../ui';
 
-export const GreetingSection = async () => {
+export const GreetingSection = () => {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,

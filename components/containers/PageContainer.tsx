@@ -2,7 +2,7 @@ import { Header, Footer } from '@/components/layout';
 import { cn } from '@/lib/utils';
 import { Props } from 'useful-react-types';
 
-export const PageContainer = async ({ children }: Props.HasChildren) => {
+export const PageContainer = ({ children }: Props.HasChildren) => {
   return (
     <>
       <Header />

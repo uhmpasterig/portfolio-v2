@@ -1,11 +1,11 @@
 'use client';
 import { Grid } from '@/components/Grid';
-import { ListItem, ListItemProps } from '@/components/ListItem';
 import React from 'react';
 import { useScroll, useTransform, motion, MotionValue } from 'framer-motion';
-import type { ListItem as ListItemInfo, ListSectionProps } from '@/types/components/list';
-import { ListContext, useListContext } from '@/lib/hooks/list-hooks';
 import { useMediaQuery } from '@/lib/hooks/media-query';
+import type { ListSectionProps } from '.';
+import { ListContext, useListContext } from '.';
+import { ListItem } from './ListItem/ListItem';
 
 export const ListSection = <T,>({ title, items, variant = 'small-icons' }: ListSectionProps<T>) => {
   return (
